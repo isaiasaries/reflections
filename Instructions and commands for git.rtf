@@ -1,0 +1,212 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\froman\fcharset0 Times New Roman;}{\f2\fswiss\fcharset0 Courier New;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Git Tutorial - Try Git\par
+\par
+git init - To inicialize a Git repository\par
+git status\par
+\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.3\i0  Adding & Committing\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 I created a file called \f2\fs20 octocat.txt\f1\fs24  in the octobox repository for you (as you can see in the browser below).\par
+You should run the \f2\fs20 git status\f1\fs24  command again to see how the repository status has changed:\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 git status\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.4\i0  Adding Changes\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Good, it looks like our Git repository is working properly. Notice how Git says \f2\fs20 octocat.txt\f1\fs24  is "untracked"? That means Git sees that \f2\fs20 octocat.txt\f1\fs24  is a new file.\par
+To tell Git to start tracking changes made to \f2\fs20 octocat.txt\f1\fs24 , we first need to add it to the staging area by using \f2\fs20 git add\f1\fs24 .\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\fs48 1.5\i0  Checking for Changes\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Good job! Git is now tracking our \f2\fs20 octocat.txt\f1\fs24  file. Let's run \f2\fs20 git status\f1\fs24  again to see where we stand:\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.6\i0  Committing\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Notice how Git says \f2\fs20 changes to be committed\f1\fs24 ? The files listed here are in the \f2\fs20 Staging Area\f1\fs24 , and they are not in our repository yet. We could add or remove files from the stage before we store them in the repository.\par
+To store our staged changes we run the \f2\fs20 commit\f1\fs24  command with a message describing what we've changed. Let's do that now by typing:\par
+git commit -m "Add cute octocat story"\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.7\i0  Adding All Changes\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Great! You also can use wildcards if you want to add many files of the same type. Notice that I've added a bunch of .txt files into your directory below.\par
+I put some in a directory named "octofamily" and some others ended up in the root of our "octobox" directory. Luckily, we can add all the new files using a wildcard with \f2\fs20 git add\f1\fs24 . Don't forget the quotes!\par
+git add '*.txt'\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.8\i0  Committing All Changes\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Okay, you've added all the text files to the staging area. Feel free to run git status to see what you're about to commit.\par
+If it looks good, go ahead and run:\par
+git commit -m 'Add all the octocat txt files'\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.9\i0  History\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 So we've made a few commits. Now let's browse them to see what we changed.\par
+Fortunately for us, there's \f2\fs20 git log\f1\fs24 . Think of Git's log as a journal that remembers all the changes we've committed so far, in the order we committed them. Try running it now:\par
+git log\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.10\i0  Remote Repositories\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Great job! We've gone ahead and created a new empty GitHub repository for you to use with Try Git at {\f2\fs20{\field{\*\fldinst{HYPERLINK https://github.com/try-git/try_git.git }}{\fldrslt{https://github.com/try-git/try_git.git\ul0\cf0}}}}\f1\fs24 . To push our local \i repo\i0  to the GitHub server we'll need to add a remote repository.\par
+This command takes a \i remote name\i0  and a \i repository URL\i0 , which in your case is {\f2\fs20{\field{\*\fldinst{HYPERLINK https://github.com/try-git/try_git.git }}{\fldrslt{https://github.com/try-git/try_git.git\ul0\cf0}}}}\f1\fs24 .\par
+Go ahead and run \f2\fs20 git remote add\f1\fs24  with the options below:\par
+git remote add origin {{\field{\*\fldinst{HYPERLINK https://github.com/try-git/try_git.git }}{\fldrslt{https://github.com/try-git/try_git.git\ul0\cf0}}}}\f1\fs24\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.11\i0  Pushing Remotely\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 The push command tells Git where to put our commits when we're ready, and now we're ready. So let's push our local changes to our \b origin\b0  repo (on GitHub).\par
+The name of our remote is \f2\fs20 origin\f1\fs24  and the default local branch name is \f2\fs20 master\f1\fs24 . The \f2\fs20 -u\f1\fs24  tells Git to remember the parameters, so that next time we can simply run \f2\fs20 git push\f1\fs24  and Git will know what to do. Go ahead and push it!\par
+git push -u origin master\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.12\i0  Pulling Remotely\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Let's pretend some time has passed. We've invited other people to our GitHub project who have pulled your changes, made their own commits, and pushed them.\par
+We can check for changes on our GitHub repository and pull down any new changes by running:\par
+git pull origin master\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.13\i0  Differences\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Uh oh, looks like there have been some additions and changes to the octocat family. Let's take a look at what is \f2\fs20 different\f1\fs24  from our last commit by using the \f2\fs20 git diff\f1\fs24  command.\par
+In this case we want the diff of our most recent commit, which we can refer to using the \f2\fs20 HEAD\f1\fs24  pointer.\par
+git diff HEAD\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.14\i0  Staged Differences\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Another great use for \f2\fs20 diff\f1\fs24  is looking at changes within files that have already been staged. Remember, staged files are files we have told git that are ready to be committed.\par
+Let's use \f2\fs20 git add\f1\fs24  to stage \f2\fs20 octofamily/octodog.txt\f1\fs24 , which I just added to the family for you.\par
+git add octofamily/octodog.txt\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.15\i0  Staged Differences (cont'd)\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Good, now go ahead and run \f2\fs20 git diff\f1\fs24  with the \f2\fs20 --staged\f1\fs24  option to see the changes you just staged. You should see that \f2\fs20 octodog.txt\f1\fs24  was created.\par
+git diff --staged\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.16\i0  Resetting the Stage\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 So now that octodog is part of the family, octocat is all depressed. Since we love octocat more than octodog, we'll turn his frown around by removing \f2\fs20 octodog.txt\f1\fs24 .\par
+You can unstage files by using the \f2\fs20 git reset\f1\fs24  command. Go ahead and remove \f2\fs20 octofamily/octodog.txt\f1\fs24 .\par
+git reset octofamily/octodog.txt\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.17\i0  Undo\par
+
+\pard\sb100\sa100\kerning0\b0\f2\fs20 git reset\f1\fs24  did a great job of unstaging octodog.txt, but you'll notice that he's still there. He's just not staged anymore. It would be great if we could go back to how things were before octodog came around and ruined the party.\par
+Files can be changed back to how they were at the last commit by using the command: \f2\fs20 git checkout -- <target>\f1\fs24 . Go ahead and get rid of all the changes since the last commit for \f2\fs20 octocat.txt\f1\fs24\par
+git checkout -- octocat.txt\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.18\i0  Branching Out\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 When developers are working on a feature or bug they'll often create a copy (aka. \f2\fs20 branch\f1\fs24 ) of their code they can make separate commits to. Then when they're done they can merge this branch back into their main \f2\fs20 master\f1\fs24  branch.\par
+We want to remove all these pesky octocats, so let's create a branch called \f2\fs20 clean_up\f1\fs24 , where we'll do all the work:\par
+git branch clean_up\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.19\i0  Switching Branches\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Great! Now if you type \f2\fs20 git branch\f1\fs24  you'll see two local branches: a main branch named \f2\fs20 master\f1\fs24  and your new branch named \f2\fs20 clean_up\f1\fs24 .\par
+You can switch branches using the \f2\fs20 git checkout <branch>\f1\fs24  command. Try it now to switch to the \f2\fs20 clean_up\f1\fs24  branch:\par
+git checkout clean_up\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.20\i0  Removing All The Things\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Ok, so you're in the \f2\fs20 clean_up\f1\fs24  branch. You can finally remove all those pesky octocats by using the \f2\fs20 git rm\f1\fs24  command which will not only remove the actual files from disk, but will also stage the removal of the files for us.\par
+You're going to want to use a wildcard again to get all the octocats in one sweep, go ahead and run:\par
+git rm '*.txt'\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.21\i0  Commiting Branch Changes\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Now that you've removed all the cats you'll need to commit your changes.\par
+Feel free to run \f2\fs20 git status\f1\fs24  to check the changes you're about to commit.\par
+git commit -m "Remove all the cats"\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.22\i0  Switching Back to master\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Great, you're almost finished with the cat... er the bug fix, you just need to switch back to the \f2\fs20 master\f1\fs24  branch so you can copy (or \f2\fs20 merge\f1\fs24 ) your changes from the \f2\fs20 clean_up\f1\fs24  branch back into the \f2\fs20 master\f1\fs24  branch.\par
+Go ahead and checkout the \f2\fs20 master\f1\fs24  branch:\par
+git checkout master\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.23\i0  Preparing to Merge\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Alrighty, the moment has come when you have to merge your changes from the \f2\fs20 clean_up\f1\fs24  branch into the \f2\fs20 master\f1\fs24  branch. Take a deep breath, it's not that scary.\par
+We're already on the \f2\fs20 master\f1\fs24  branch, so we just need to tell Git to merge the \f2\fs20 clean_up\f1\fs24  branch into it:\par
+git merge clean_up\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.24\i0  Keeping Things Clean\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Congratulations! You just accomplished your first successful bugfix and merge. All that's left to do is clean up after yourself. Since you're done with the \f2\fs20 clean_up\f1\fs24  branch you don't need it anymore.\par
+You can use \f2\fs20 git branch -d <branch name>\f1\fs24  to delete a branch. Go ahead and delete the \f2\fs20 clean_up\f1\fs24  branch now:\par
+git branch -d clean_up\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.25\i0  The Final Push\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Here we are, at the last step. I'm proud that you've made it this far, and it's been great learning Git with you. All that's left for you to do now is to push everything you've been working on to your remote repository, and you're done!\par
+git push\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 1.25\i0  The Final Push\par
+
+\pard\sb100\sa100\kerning0\b0\fs24 Great! You now have a little taste of the greatness of Git. You can take a look at the wrap up page for a little more information on Git and GitHub, oh, and of course your badge!\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+\par
+
+\pard\keepn\sb100\sa100\kerning36\b\i\f1\fs48\lang1033 Important instructions to use GitHub\kerning0\b0\i0\f0\fs22\lang9\par
+\b\f1\fs28\lang1033 create a new repository on the command line\par
+
+\pard\tx959\tx1918\tx2877\tx3836\tx4795\tx5754\tx6713\tx7672\tx8631\b0\f2\fs20 echo "# reflections" >> README.md\par
+git init\par
+git add README.md\par
+git commit -m "first commit"\par
+git remote add origin git@github.com:isaiasaries/reflections.git\par
+git push -u origin master\par
+
+\pard\keepn\sb100\sa100\b\f1\fs28\'85or push an existing repository from the command line\par
+
+\pard\tx959\tx1918\tx2877\tx3836\tx4795\tx5754\tx6713\tx7672\tx8631\b0\f2\fs20 git remote add origin git@github.com:isaiasaries/reflections.git\par
+git push -u origin master\par
+
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+}
+ 
